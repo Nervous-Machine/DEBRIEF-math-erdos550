@@ -1,0 +1,268 @@
+{
+ "missions": [
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "DEBRIEF/tools/new_mission.py",
+   "created_at": "2026-11-14T20:49:24Z",
+   "mission_id": "erdos550-2026-11",
+   "pod": "DEBRIEF-math-erdos550",
+   "provenance": {
+    "source": "public record to 2026-11-14: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
+   },
+   "audience": "briefing",
+   "title": "The claimed solution of Erdős Problem #550 (Ramsey numbers of trees versus complete multipartite graphs)",
+   "kind": "audit",
+   "protocol_version": "0.1.0",
+   "claim_rule_met": false,
+   "label": "Erdős #550",
+   "area": "Graph theory: Ramsey theory",
+   "rests_on": "an arXiv paper and a Lean development",
+   "pods": [
+    "DEBRIEF-math-erdos550"
+   ],
+   "began": "2026-11-14",
+   "status": "active",
+   "record_quality": "full_ledger",
+   "record_note": "Opened at tier zero: the claim and its artifacts are pinned, the gaps are drawn, nothing has been run or read by Nervous Machine.",
+   "record_limits": [
+    "Nothing in this record has been checked by Nervous Machine or by anyone independent of the claimants; every item is an open gap."
+   ],
+   "scope_limits": [
+    "Nervous Machine keeps score of the checks; it does not check the mathematics line by line.",
+    "Public record through 2026-11-14."
+   ],
+   "opening": {
+    "spoken": "This record covers the claimed solution of Erdős problem #550: what has been claimed, what it rests on, and what would have to be checked by whom."
+   },
+   "short_version": {
+    "spoken": "Erdős, Faudree, Rousseau and Schelp asked for an upper bound on the Ramsey number of a large tree against a complete multipartite graph in terms of the bipartite case. In June 2026 Eric Li posted a paper claiming the bound for every sufficiently large tree, and in August a Lean development. Nobody independent has reported building the development or reading the argument. Everything here is open."
+   },
+   "what_happened": {
+    "spoken": "The claim was pinned from the public record: the problem page, the proof-claims thread, and every artifact the claimants made public, by commit or hash. Nothing was run. The gaps that follow are the checks still owed."
+   },
+   "implications": {
+    "rely_on": [],
+    "do_not_rely_on": [
+     {
+      "spoken": "the claimed solution as settled; nothing in it has standing yet",
+      "finding_ids": []
+     }
+    ],
+    "stop": [],
+    "new": []
+   },
+   "certainty_statement": {
+    "spoken": "Nothing is certified or accepted. Every item is open."
+   },
+   "sources": [
+    {
+     "kind": "problem",
+     "ref": "https://www.erdosproblems.com/550"
+    },
+    {
+     "kind": "arxiv",
+     "ref": "arXiv:2606.23659v2 \"A Resolution of Erdős Problem 550 on Tree versus Complete Multipartite Ramsey Numbers\" (published 2026-06-22, last revised 2026-08-02)"
+    },
+    {
+     "kind": "repo",
+     "ref": "github.com/ericlisg/erdos550-lean at commit 6624ede70821f095eaee49865448af4e4f8c421c (2026-08-02); no licence file; 137 Lean files; has a lakefile"
+    },
+    {
+     "kind": "formal statement (third party)",
+     "ref": "github.com/google-deepmind/formal-conjectures FormalConjectures/ErdosProblems/550.lean at e028240a61822d970c933f4656f51da025cf200b"
+    }
+   ]
+  }
+ ],
+ "cycles": [
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "DEBRIEF/tools/new_mission.py",
+   "created_at": "2026-11-14T20:49:24Z",
+   "mission_id": "erdos550-2026-11",
+   "pod": "DEBRIEF-math-erdos550",
+   "provenance": {
+    "source": "public record to 2026-11-14: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
+   },
+   "audience": "briefing",
+   "cycle": 0,
+   "dated": "2026-06-22 to 2026-11-14",
+   "kind": "replay",
+   "preregistered": {
+    "question": "What is on the public record about this claim?",
+    "rule": "no look-ahead; each event dated by its first public posting; artifacts pinned by commit or hash",
+    "predictions": [],
+    "commit": null,
+    "before_data": false
+   },
+   "outcome": {
+    "verdict": "admitted",
+    "numbers": {
+     "claims": 1,
+     "artifacts": 2
+    }
+   },
+   "spoken": "Eric Li posted the paper on arXiv; the Erdős-problems AI wiki listed it as a candidate full solution, marked unverified. The proof claim was listed on the problem page with links to the paper and a formalisation. The Lean repository was created and reached its current commit, and the paper's second version was posted, the same day. The problem page lists one proof claim, not marked accepted by the site; the repository has no licence file. A third-party formalisation of the problem statement exists.",
+   "finding_ids": [],
+   "gap_ids": [
+    "EG1",
+    "EG2",
+    "EG3"
+   ]
+  }
+ ],
+ "findings": [],
+ "gaps": [
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "DEBRIEF/tools/new_mission.py",
+   "created_at": "2026-11-14T20:49:24Z",
+   "mission_id": "erdos550-2026-11",
+   "pod": "DEBRIEF-math-erdos550",
+   "provenance": {
+    "source": "public record to 2026-11-14: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
+   },
+   "audience": "briefing",
+   "gap_id": "EG1",
+   "title": "The Lean development has not been built or kernel-checked by anyone outside the claimant",
+   "status": "proposed",
+   "opened_cycle": 0,
+   "priority": 1,
+   "history": [],
+   "closes_with": [
+    {
+     "what": "a pre-registered rerun: fetch at the pinned commit, build, confirm no sorry or admit, print the axioms",
+     "kind": "rerun",
+     "external": true,
+     "who_could_act": "anyone with a machine and a few hours"
+    }
+   ],
+   "spoken": "The claimant reports a Lean development that compiles with standard axioms only. Nobody outside the claimant has reported building it.",
+   "ask": {
+    "spoken": "A rerun of the Lean build on an independent machine, written down first."
+   },
+   "expected_signal": "a rerun cycle reporting build exit status, the sorry/admit scan and the axiom list for the main theorem",
+   "resolution_by": "none registered"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "DEBRIEF/tools/new_mission.py",
+   "created_at": "2026-11-14T20:49:24Z",
+   "mission_id": "erdos550-2026-11",
+   "pod": "DEBRIEF-math-erdos550",
+   "provenance": {
+    "source": "public record to 2026-11-14: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
+   },
+   "audience": "briefing",
+   "gap_id": "EG2",
+   "title": "Do the formal statements say what the problem asks?",
+   "status": "proposed",
+   "opened_cycle": 0,
+   "priority": 2,
+   "history": [],
+   "closes_with": [
+    {
+     "what": "a machine comparison of the claimant's main theorem with the third-party formal statement in google-deepmind/formal-conjectures, then a human read of any difference",
+     "kind": "trace",
+     "external": true,
+     "who_could_act": "anyone who can read Lean; the two statements are public"
+    },
+    {
+     "what": "two independent mathematicians read the formal statement against the problem as posed and sign, or refuse",
+     "kind": "read",
+     "external": true,
+     "who_could_act": "a mathematician in the problem's area, about an hour with a reading guide"
+    }
+   ],
+   "spoken": "A Lean check establishes that the formal statement follows from its hypotheses. Whether that formal statement is the problem Erdős posed is a separate question that a person has to answer. A third-party formalization of the problem statement exists, so part of this can be compared by machine.",
+   "ask": {
+    "spoken": "A reading of the formal statement against the problem as posed, by someone who did not write it."
+   },
+   "expected_signal": "a trace cycle and two signed read cycles, or a refusal naming the difference",
+   "resolution_by": "none registered"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "DEBRIEF/tools/new_mission.py",
+   "created_at": "2026-11-14T20:49:24Z",
+   "mission_id": "erdos550-2026-11",
+   "pod": "DEBRIEF-math-erdos550",
+   "provenance": {
+    "source": "public record to 2026-11-14: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
+   },
+   "audience": "briefing",
+   "gap_id": "EG3",
+   "title": "No independent mathematician has reported reading the proof, and there is no referee report",
+   "status": "proposed",
+   "opened_cycle": 0,
+   "priority": 3,
+   "history": [],
+   "closes_with": [
+    {
+     "what": "a read cycle by a mathematician in the area who is not an author, signing or refusing each main step",
+     "kind": "read",
+     "external": true,
+     "who_could_act": "a mathematician in the problem's area"
+    },
+    {
+     "what": "a referee report or journal acceptance, recorded by date",
+     "kind": "measurement",
+     "external": true,
+     "who_could_act": "a journal; the record notes the date when it happens"
+    }
+   ],
+   "spoken": "The claim is listed on the problem's page, which states that appearing there is no guarantee of correctness and that nobody associated with the site has examined it. No independent reading is on the public record.",
+   "ask": {
+    "spoken": "Someone in the field reads it and says, under their name, what holds and what does not."
+   },
+   "expected_signal": "a signed or refused read cycle; a dated referee report",
+   "resolution_by": "none registered"
+  }
+ ],
+ "anomalies": [],
+ "background": [
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "DEBRIEF/tools/new_mission.py",
+   "created_at": "2026-11-14T20:49:24Z",
+   "mission_id": "erdos550-2026-11",
+   "pod": "DEBRIEF-math-erdos550",
+   "provenance": {
+    "source": "public record to 2026-11-14: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
+   },
+   "audience": "briefing",
+   "term": "Erdős Problem #550",
+   "spoken": "Let T be a tree on n vertices with n large, and G the complete multipartite graph with class sizes m1 up to mk in increasing order. Show that the Ramsey number of T against G is at most the chromatic number of G minus one, times the Ramsey number of T against the complete bipartite graph on the two smallest classes minus one, plus m1. Chvátal's classical result gives the complete-graph case exactly.",
+   "source": "https://www.erdosproblems.com/550"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "DEBRIEF/tools/new_mission.py",
+   "created_at": "2026-11-14T20:49:24Z",
+   "mission_id": "erdos550-2026-11",
+   "pod": "DEBRIEF-math-erdos550",
+   "provenance": {
+    "source": "public record to 2026-11-14: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
+   },
+   "audience": "briefing",
+   "term": "Proof claims on erdosproblems.com",
+   "spoken": "The site lets anyone list a claimed proof. Its own text says that appearing there is no guarantee of correctness and does not mean anyone associated with the site has examined it. A listed claim is where checking starts, not where it ends.",
+   "source": "https://www.erdosproblems.com/forum/thread/550/proof-claims"
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "created_by": "DEBRIEF/tools/new_mission.py",
+   "created_at": "2026-11-14T20:49:24Z",
+   "mission_id": "erdos550-2026-11",
+   "pod": "DEBRIEF-math-erdos550",
+   "provenance": {
+    "source": "public record to 2026-11-14: the problem page, its proof-claims thread and the claimants' public artifacts, pinned in claim.yaml"
+   },
+   "audience": "briefing",
+   "term": "The claim by Eric Li",
+   "spoken": "The claim is the stated bound for every sufficiently large n and every n-vertex tree, with k minus one in place of the chromatic number minus one. The proof combines an off-Turán tree-embedding theorem, obtained from Szemerédi regularity and an embedding lemma of Hladký and Piguet, with a compactness-and-rounding theorem for bounded-rank hypergraph obstructions using shadow hypergraphs.",
+   "source": "https://www.erdosproblems.com/forum/thread/550/proof-claims"
+  }
+ ],
+ "sessions": []
+}
