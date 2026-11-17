@@ -1,0 +1,70 @@
+# Pre-registration, cycle 1: a definitional trace (reading guide) of the formal statements of Erdős Problem #550, for
+# human semantic review. Written 2026-11-17 at tier zero (no build rerun has been done on this record) and BEFORE reading
+# the definitions behind either statement (graphRamsey in formal-conjectures; ramsey and Kmult in the claimant's
+# repository; the Mathlib graph definitions) or writing any rendering. Changes after this point go in an amendment at the end.
+mission: DEBRIEF-math-erdos550
+cycle: 1
+dated: "2026-11-17"
+by: "Nervous Machine (Heidi Bennett; Claude Code as the operating agent)"
+question: >
+  Can the open semantic gap (EG2: do the formal statements say what Erdős, Faudree, Rousseau and Schelp asked?) be made
+  cheaper for a human reviewer, by laying out the problem as posed, the third-party formal statement and the claimant's
+  own statement, every definition they depend on down to Mathlib, a plain-language rendering of each, and the specific
+  points a mathematician has to confirm? In particular: what does "sufficiently large" quantify in each, and do the two
+  formal statements say the same thing?
+what_this_cycle_is:
+  - "An aid for review: trace/DEFINITIONAL-TRACE.md plus a Lean file of worked examples and #check/#print commands
+     (cycles/trace-1/Trace.lean)."
+  - "Sources are read from the pinned commits over the network, read-only. Nothing is cloned, built or executed; the
+     claimant's code is not run."
+  - "The renderings are the operating agent's reading of Lean and Mathlib source. They are a reading, not a check."
+what_this_cycle_is_not:
+  - "Not an independent human semantic review. EG2 stays open after this cycle whatever the trace says; the trace moves
+     no standing."
+  - "Not a build rerun (EG1 stays open) and not a machine comparison of the two statements: the worked examples are
+     written but not run by Lean in this cycle, and the trace says so."
+  - "It does not read or judge the paper's argument (EG3)."
+rules:
+  R1: "Every Lean statement is quoted verbatim from the pinned formal-conjectures file (commit e028240a, blob e8bc7c0e),
+       from the claimant's repository at 6624ede7, or from the Mathlib revision each pins, with file and line."
+  R2: "Each rendering is marked as the agent's reading. Where the agent is unsure what a definition means, it says so."
+  R3: "Any place where a formal statement and the problem as posed differ in a way the agent can see (the scope of
+       'sufficiently large', chi(G) - 1 versus k - 1, positivity of class sizes, the encoding of the Ramsey number and of
+       'contains', natural-number subtraction, the vertex type) is recorded as a discrepancy whether or not it looks
+       harmless, and as an anomaly in the ledger if it could change the meaning."
+  R4: "Worked examples are written as Lean commands but are not run in this cycle; the trace states that they are pending
+       a run inside the built development and claims no output for them."
+observed_before_this_prereg:
+  - "The problem page (read 2026-11-17): 'Let m_1 <= ... <= m_k and n be sufficiently large. If T is a tree on n vertices
+     and G is the complete multipartite graph with vertex class sizes m_1, ..., m_k then prove that
+     R(T,G) <= (chi(G)-1)(R(T,K_{m_1,m_2})-1)+m_1.' citing [EFRS85]; Chvátal: R(T,K_m) = (m-1)(n-1)+1."
+  - "The formal-conjectures statement erdos_550 (bare text only): for all k with 2 <= k, m : Fin k -> N monotone with every
+     m i > 0, eventually in n (Filter.atTop), for every T : SimpleGraph (Fin n) with T.IsTree, graphRamsey T
+     (completeMultipartiteGraph (fun i => Fin (m i))) <= (k - 1) * (graphRamsey T (completeBipartiteGraph (Fin m_0)
+     (Fin m_1)) - 1) + m_0. Its docstring links a formal proof in plby/lean-proofs, not the claimant's repository."
+  - "The claimant's statement (README and Challenge.lean, bare text only): for k >= 2, m monotone with 1 <= m_0, there is
+     n0 such that for n >= n0 and every T on any finite vertex type V with card V = n and T.IsTree, ramsey T (Kmult k m)
+     <= (k - 1) * (ramsey T (Kmult 2 (first two classes)) - 1) + m_0. ramsey and Kmult are the claimant's own definitions."
+  - "The proof-claims thread and the seven page comments. The repository file list (names only). The Mathlib revision
+     the claimant pins (8f9d9cff, Lean v4.28.0). The definitions files were downloaded to scratch alongside the statement
+     files but not opened."
+predictions:
+  P1: "The formal-conjectures statement renders to the page's sentence with k - 1 in place of chi(G) - 1, and this is
+       harmless: with every class nonempty and k >= 2, chi(K_{m_1,...,m_k}) = k."
+  P2: "In both formal statements the threshold for n depends on k and the class sizes (for each G, then for all large n);
+       nothing uniform in G is claimed. The page's 'Let m_1 <= ... <= m_k and n be sufficiently large' can be read as also
+       requiring the m_i to be large; the formal statements require only m_i >= 1, which covers more graphs G. The trace
+       will name this as the sharpest reading question, and the agent expects it not to change the meaning in the
+       direction a proof needs."
+  P3: "The Ramsey number in both is the least N such that every graph on N vertices contains T or its complement contains
+       G, with 'contains' meaning a not-necessarily-induced copy; Lean's truncated subtraction (R - 1, k - 1) and the
+       value of an infimum over an empty set need a sentence each and change nothing, because the Ramsey numbers here are
+       finite and positive."
+  P4: "The claimant's statement and the formal-conjectures statement say the same thing in the agent's reading (the
+       claimant's is at least as general in the vertex type), but no machine bridge between them exists at the pinned
+       commit; this is recorded as an open item, not settled by the trace."
+standing_consequences:
+  any_outcome: "EG2 remains open. Its ask changes from 'read the formal statement' to 'read the trace against the formal
+                statements and the problem page, and sign or refuse each checklist item'."
+  discrepancy_found: "An anomaly is opened naming it if it could change the meaning. There are no findings on this record
+                      yet, so no finding note is rewritten."
