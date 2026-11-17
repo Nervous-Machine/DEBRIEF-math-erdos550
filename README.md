@@ -4,7 +4,7 @@ A DEBRIEF mission record (protocol https://github.com/Nervous-Machine/DEBRIEF) f
 
 This claim is on the public claims board, https://math-board.nervousmachine.com, which shows its stage, who has contributed, and what it needs next.
 
-**Standing.** Certified 0. Accepted 0. Refuted 0. Open gaps 3. This record is at tier zero: the claim and its public artifacts are pinned, the checks still owed are listed, and nothing has been run or read yet. The first contribution is open.
+**Standing.** Certified 0. Accepted 0. Refuted 0. Open gaps 3. The claim and its public artifacts are pinned and the checks still owed are listed. A reading guide for the semantic question exists (cycle 1); nothing has been built, run or signed yet.
 
 ## The problem
 
@@ -32,13 +32,13 @@ Status on the problem page as of 2026-11-14: listed as one proof claim; not mark
 Each open gap is in `ASKS.md` with what closes it and who could act. In order:
 
 1. **The Lean development has not been built or kernel-checked by anyone outside the claimant** (EG1): A rerun of the Lean build on an independent machine, written down first.
-2. **Do the formal statements say what the problem asks?** (EG2): A reading of the formal statement against the problem as posed, by someone who did not write it.
+2. **Do the formal statements say what the problem asks?** (EG2): A graph theorist who is not an author reads trace/DEFINITIONAL-TRACE.md against the formal statements and the problem page and signs or refuses its four checklist lines (A1 to A4), in about forty-five minutes. The sharpest is A1: that "sufficiently large" means the multipartite graph is fixed first and then every large enough tree. Two independent signatures close this gap.
 3. **No independent mathematician has reported reading the proof, and there is no referee report** (EG3): Someone in the field reads it and says, under their name, what holds and what does not.
 
 ## Contributing
 
 - **Rerun** (if there is a Lean development): copy `prereg_rerun.yaml`, fill in your predictions, register it with `tools/prereg.py register` from the protocol repository and commit it *before* running anything. Run. Report with the **Rerun report** issue form; it becomes a `rerun` cycle under your name.
-- **Read**: a trace (reading guide) does not exist yet. Writing one is itself a `trace` cycle. Once it exists, the **Semantic read** form takes signatures and refusals.
+- **Read**: the reading guide is `trace/DEFINITIONAL-TRACE.md` (cycle 1). It quotes the problem and both formal statements, traces every symbol to its definition, and ends with a four-line checklist. Sign or refuse it with the **Semantic read** issue form; your answers become a `read` cycle under your name. Two independent signatures close gap EG2. Its Lean worked examples (`cycles/trace-1/Trace.lean`) are written but not yet run; whoever reruns the build can run them too.
 - **Anything else**: open a plain issue.
 
 Rules and templates: https://github.com/Nervous-Machine/DEBRIEF/blob/main/CONTRIBUTING.md. Every contribution is one dated cycle under your own name and goes into `CITATION.cff` and the next release.
@@ -50,6 +50,8 @@ ledger/erdos550.json   the ledger (protocol 0.1.0)
 claim.yaml            the pinned claim this record was opened from
 SCORECARD.md / ASKS.md  generated from the ledger
 prereg_rerun.yaml     a pre-registration template for the first rerun (unregistered)
+prereg_trace.yaml     the pre-registration of cycle 1, the reading guide (hashed)
+trace/                the reading guide for the semantic question (cycle 1)
 cycles/               contributed cycles, one file each
 ```
 

@@ -23,9 +23,9 @@
    "began": "2026-11-14",
    "status": "active",
    "record_quality": "full_ledger",
-   "record_note": "Opened at tier zero: the claim and its artifacts are pinned, the gaps are drawn, nothing has been run or read by Nervous Machine.",
+   "record_note": "Opened at tier zero on 2026-11-14: the claim and its artifacts pinned, the gaps drawn. Cycle 1, 2026-11-17: the reading guide for the semantic question, written from the pinned sources without building or running anything.",
    "record_limits": [
-    "Nothing in this record has been checked by Nervous Machine or by anyone independent of the claimants; every item is an open gap."
+    "Nothing in this record has been checked by Nervous Machine or by anyone independent of the claimant: the Lean development has not been rebuilt, the worked examples and the statement bridge written for the reading guide have not been run, and nobody independent has read the formal statements against the problem as posed, or the paper."
    ],
    "scope_limits": [
     "Nervous Machine keeps score of the checks; it does not check the mathematics line by line.",
@@ -38,7 +38,7 @@
     "spoken": "Erdős, Faudree, Rousseau and Schelp asked for an upper bound on the Ramsey number of a large tree against a complete multipartite graph in terms of the bipartite case. In June 2026 Eric Li posted a paper claiming the bound for every sufficiently large tree, and in August a Lean development. Nobody independent has reported building the development or reading the argument. Everything here is open."
    },
    "what_happened": {
-    "spoken": "The claim was pinned from the public record: the problem page, the proof-claims thread, and every artifact the claimants made public, by commit or hash. Nothing was run. The gaps that follow are the checks still owed."
+    "spoken": "The claim was pinned from the public record: the problem page, the proof-claims thread, and every artifact the claimants made public, by commit or hash. A reading guide now lays the third-party formal statement and the claimant's own beside the problem as posed, definition by definition, and settles in two lines which reading of \"sufficiently large\" can be meant, so the human read takes under an hour. Nothing has been built or run. The gaps that follow are the checks still owed."
    },
    "implications": {
     "rely_on": [],
@@ -109,6 +109,61 @@
     "EG2",
     "EG3"
    ]
+  },
+  {
+   "schema_version": "nm-debrief-v1",
+   "mission_id": "erdos550-2026-11",
+   "pod": "DEBRIEF-math-erdos550",
+   "created_by": "contributed cycle (merge_cycles.py)",
+   "created_at": "2026-11-17T18:12:16Z",
+   "provenance": {
+    "source": "contributed cycle file trace-1.yaml"
+   },
+   "audience": "briefing",
+   "kind": "trace",
+   "cycle": 1,
+   "dated": "2026-11-17",
+   "by": "Nervous Machine (Heidi Bennett; Claude Code as the operating agent)",
+   "not_an_author_of_the_claim": true,
+   "preregistered": {
+    "commit": "prereg_trace.yaml",
+    "results": [
+     "trace/DEFINITIONAL-TRACE.md",
+     "cycles/trace-1/Trace.lean"
+    ],
+    "question": "Can the open semantic gap (EG2) be made cheaper for a human reviewer: the problem as posed, the third-party and the claimant's formal statements, every definition behind them, a plain rendering, what 'sufficiently large' quantifies, and the points to confirm?",
+    "rule": "Statements quoted verbatim from the pinned files with file and line; renderings marked as the agent's; every discrepancy recorded whether harmless or not; worked examples written as Lean but not run in this cycle, and no output claimed for them; nothing cloned, built or executed; standing unchanged by construction.",
+    "predictions": [
+     "P1: the formal-conjectures statement renders to the page's sentence with k - 1 in place of chi(G) - 1, harmless because every class is nonempty",
+     "P2: in both statements the threshold for n depends on k and the class sizes; nothing uniform in G; the page's wording is the sharpest reading question and does not change the meaning in the direction a proof needs",
+     "P3: the Ramsey number is the standard non-induced two-colour one; truncated subtraction and sInf of the empty set need a sentence each and change nothing",
+     "P4: the claimant's statement and the formal-conjectures statement say the same thing in the agent's reading, but no machine bridge between them exists at the pinned commits"
+    ],
+    "before_data": true
+   },
+   "outcome": {
+    "verdict": "confirmed",
+    "numbers": {
+     "statements_traced": 2,
+     "pieces_traced": 10,
+     "definitions_cited": 16,
+     "worked_examples_written": 16,
+     "worked_examples_checked_by_lean": 0,
+     "discrepancies_recorded": 9,
+     "content_affecting_discrepancies_seen_by_agent": 0,
+     "anomalies_opened": 0,
+     "human_review": false,
+     "checklist_items": 6
+    },
+    "misses": [
+     "None of the predictions missed. Not done in this cycle: the worked examples and the bridge from the claimant's statement to the formal-conjectures statement are written in cycles/trace-1/Trace.lean and have not been run by Lean; they are pending a run inside the built development (EG1)."
+    ]
+   },
+   "spoken": "Nervous Machine wrote the reading guide for the question on this record that a machine cannot settle: whether the formal statements of problem 550 say what Erdős, Faudree, Rousseau and Schelp asked. The guide quotes the problem page, the third-party formal statement and the claimant's own statement word for word, traces every symbol to its definition in Mathlib or the two repositories with file and line, and gives a plain reading of each piece. Nine conventions are written down; none changes the meaning in the agent's reading. The sharpest is the page's phrase \"sufficiently large\": both formal statements fix the multipartite graph first and then take every large enough tree, and the guide gives a two-line argument that a threshold uniform in the class sizes would make the inequality false. Sixteen small Lean checks, and a short derivation of the third-party statement from the claimant's, are written but not yet run by Lean. The readings are the system's, not a mathematician's, so nothing changed standing. A graph theorist can now sign or refuse four lines in under an hour.",
+   "finding_ids": [],
+   "gap_ids": [
+    "EG2"
+   ]
   }
  ],
  "findings": [],
@@ -156,10 +211,17 @@
    "audience": "briefing",
    "gap_id": "EG2",
    "title": "Do the formal statements say what the problem asks?",
-   "status": "proposed",
+   "status": "in_cycle",
    "opened_cycle": 0,
    "priority": 2,
-   "history": [],
+   "history": [
+    {
+     "cycle": 1,
+     "hypothesis": "a definitional trace makes the human read cheap",
+     "before_data": true,
+     "result": "trace/DEFINITIONAL-TRACE.md written: two statements, ten pieces traced to Mathlib and the two repositories, nine conventions recorded, none content-affecting in the agent's reading; the quantifier on 'sufficiently large' is the one place a reader's judgement is needed (checklist A1). Sixteen worked examples and a derivation of the third-party statement from the claimant's are written in cycles/trace-1/Trace.lean and not yet run by Lean. Status proposed -> in_cycle; the ask is now to sign or refuse the checklist"
+    }
+   ],
    "closes_with": [
     {
      "what": "a machine comparison of the claimant's main theorem with the third-party formal statement in google-deepmind/formal-conjectures, then a human read of any difference",
@@ -176,9 +238,9 @@
    ],
    "spoken": "A Lean check establishes that the formal statement follows from its hypotheses. Whether that formal statement is the problem Erdős posed is a separate question that a person has to answer. A third-party formalization of the problem statement exists, so part of this can be compared by machine.",
    "ask": {
-    "spoken": "A reading of the formal statement against the problem as posed, by someone who did not write it."
+    "spoken": "A graph theorist who is not an author reads trace/DEFINITIONAL-TRACE.md against the formal statements and the problem page and signs or refuses its four checklist lines (A1 to A4), in about forty-five minutes. The sharpest is A1: that 'sufficiently large' means the multipartite graph is fixed first and then every large enough tree. Two independent signatures close this gap."
    },
-   "expected_signal": "a trace cycle and two signed read cycles, or a refusal naming the difference",
+   "expected_signal": "two signed read cycles with no refusal, or a refusal naming the line and the difference; and a Lean run of the bridge in cycles/trace-1/Trace.lean inside the built development",
    "resolution_by": "none registered"
   },
   {

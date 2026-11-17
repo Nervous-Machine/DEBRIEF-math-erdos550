@@ -16,12 +16,12 @@ Signal expected: a rerun cycle reporting build exit status, the sorry/admit scan
 
 A Lean check establishes that the formal statement follows from its hypotheses. Whether that formal statement is the problem Erdős posed is a separate question that a person has to answer. A third-party formalization of the problem statement exists, so part of this can be compared by machine.
 
-Status: proposed.
+Status: in cycle.
 
 - **a machine comparison of the claimant's main theorem with the third-party formal statement in google-deepmind/formal-conjectures, then a human read of any difference** — contribution kind: trace (a reading guide); who could act: anyone who can read Lean; the two statements are public.
 - **two independent mathematicians read the formal statement against the problem as posed and sign, or refuse** — contribution kind: read; who could act: a mathematician in the problem's area, about an hour with a reading guide.
 
-Signal expected: a trace cycle and two signed read cycles, or a refusal naming the difference. Resolution by: none registered.
+Signal expected: two signed read cycles with no refusal, or a refusal naming the line and the difference; and a Lean run of the bridge in cycles/trace-1/Trace.lean inside the built development. Resolution by: none registered.
 
 ## 3. No independent mathematician has reported reading the proof, and there is no referee report (ledger id EG3)
 

@@ -1,0 +1,46 @@
+# Cycle 1: a definitional trace (reading guide) of the formal statements, for human semantic review.
+# Pre-registered in prereg_trace.yaml (hashed 2026-11-17T18:06:19Z) before the definitions behind the statements were read.
+kind: trace
+cycle: 1
+dated: "2026-11-17"
+by: "Nervous Machine (Heidi Bennett; Claude Code as the operating agent)"
+not_an_author_of_the_claim: true
+preregistered:
+  commit: "prereg_trace.yaml"
+  results: ["trace/DEFINITIONAL-TRACE.md", "cycles/trace-1/Trace.lean"]
+  question: "Can the open semantic gap (EG2) be made cheaper for a human reviewer: the problem as posed, the third-party and the claimant's formal statements, every definition behind them, a plain rendering, what 'sufficiently large' quantifies, and the points to confirm?"
+  rule: "Statements quoted verbatim from the pinned files with file and line; renderings marked as the agent's; every discrepancy recorded whether harmless or not; worked examples written as Lean but not run in this cycle, and no output claimed for them; nothing cloned, built or executed; standing unchanged by construction."
+  predictions:
+    - "P1: the formal-conjectures statement renders to the page's sentence with k - 1 in place of chi(G) - 1, harmless because every class is nonempty"
+    - "P2: in both statements the threshold for n depends on k and the class sizes; nothing uniform in G; the page's wording is the sharpest reading question and does not change the meaning in the direction a proof needs"
+    - "P3: the Ramsey number is the standard non-induced two-colour one; truncated subtraction and sInf of the empty set need a sentence each and change nothing"
+    - "P4: the claimant's statement and the formal-conjectures statement say the same thing in the agent's reading, but no machine bridge between them exists at the pinned commits"
+  before_data: true
+outcome:
+  verdict: confirmed
+  numbers:
+    statements_traced: 2
+    pieces_traced: 10
+    definitions_cited: 16
+    worked_examples_written: 16
+    worked_examples_checked_by_lean: 0
+    discrepancies_recorded: 9
+    content_affecting_discrepancies_seen_by_agent: 0
+    anomalies_opened: 0
+    human_review: false
+    checklist_items: 6
+  misses:
+    - "None of the predictions missed. Not done in this cycle: the worked examples and the bridge from the claimant's statement to the formal-conjectures statement are written in cycles/trace-1/Trace.lean and have not been run by Lean; they are pending a run inside the built development (EG1)."
+spoken: >-
+  Nervous Machine wrote the reading guide for the question on this record that a machine cannot settle: whether the
+  formal statements of problem 550 say what Erdős, Faudree, Rousseau and Schelp asked. The guide quotes the problem page,
+  the third-party formal statement and the claimant's own statement word for word, traces every symbol to its definition
+  in Mathlib or the two repositories with file and line, and gives a plain reading of each piece. Nine conventions are
+  written down; none changes the meaning in the agent's reading. The sharpest is the page's phrase "sufficiently large":
+  both formal statements fix the multipartite graph first and then take every large enough tree, and the guide gives a
+  two-line argument that a threshold uniform in the class sizes would make the inequality false. Sixteen small Lean
+  checks, and a short derivation of the third-party statement from the claimant's, are written but not yet run by Lean.
+  The readings are the system's, not a mathematician's, so nothing changed standing. A graph theorist can now sign or
+  refuse four lines in under an hour.
+finding_ids: []
+gap_ids: ["EG2"]
